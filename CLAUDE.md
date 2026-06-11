@@ -37,4 +37,4 @@ Edge rounding (`rounding=`) must be less than half the smallest dimension of the
 - All units in inches (actual lumber sizes, not nominal)
 - Parameters at top of file; derived values below
 - Keep cut list comment at bottom of SCAD file in sync with any geometry changes
-- PNGs are not committed to git — regenerate from SCAD as needed
+- PNGs are committed to git — regenerate and re-commit after any geometry changes

@@ -21,6 +21,16 @@ Storage shelf for a covered patio.
 | Back rails | 2×4 lumber | 4 | 33" |
 | Back panel | 1/4" plywood | 1 | 36" × 48" |
 
+## Cut List
+
+| Part | Material | Qty | Length |
+|------|----------|-----|--------|
+| Posts | 2×2 | 4 | 48" |
+| Shelf panels | 3/4" plywood | 4 | 33" × 14" |
+| Side rails | 2×4 | 6 | 11" |
+| Back rails | 2×4 | 4 | 33" |
+| Back panel | 1/4" plywood | 1 | 36" × 48" |
+
 ## Files
 
 - `patio_shelf.scad` — parametric OpenSCAD model (requires [BOSL2](https://github.com/BelfrySCAD/BOSL2))
