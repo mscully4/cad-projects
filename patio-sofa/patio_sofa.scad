@@ -15,7 +15,7 @@ back_angle =  8;   // degrees back panel leans from vertical
 
 // ── Slat counts ──────────────────────────────────────────────────────────────
 seat_slat_n = 5;
-back_slat_n = 3;
+back_slat_n = 2;
 
 // ── Derived ──────────────────────────────────────────────────────────────────
 inner_w = sofa_width - 2 * post_w;   // 53"
@@ -26,8 +26,8 @@ seat_rail_bot = seat_h - board_t - board_w;                               // 13"
 back_panel_h  = back_h - seat_h;                                          // 18"
 seat_slat_gap = (inner_d - seat_slat_n * board_w) / (seat_slat_n + 1);   // ~1.42"
 
-// Back slats fill the panel height with equal gaps above, below, and between
-back_slat_gap = (back_panel_h - back_slat_n * board_w) / (back_slat_n + 1);
+// Gaps between rails and slats — subtract top+bottom rails from available height
+back_slat_gap = (back_panel_h - (back_slat_n + 2) * board_w) / (back_slat_n + 1);
 
 back_y = sofa_depth - post_w;   // 29.5" — front face of rear legs
 
@@ -65,13 +65,17 @@ wood() for (i = [0 : seat_slat_n - 1]) {
 
 // ── Back panel (slatted rectangle, pivoting at seat height, angled backward) ──
 module back_panel() {
-    // Outer frame: top and bottom rails
-    cube([inner_w, board_t, board_w]);                              // bottom rail
-    translate([0, 0, back_panel_h - board_w]) cube([inner_w, board_t, board_w]);  // top rail
+    slat_w = inner_w - 2 * board_w;   // slat/rail span between stiles
+    // Left and right stiles (vertical, full panel height)
+    cube([board_w, board_t, back_panel_h]);
+    translate([inner_w - board_w, 0, 0]) cube([board_w, board_t, back_panel_h]);
+    // Bottom and top rails (between stiles)
+    translate([board_w, 0, 0])               cube([slat_w, board_t, board_w]);
+    translate([board_w, 0, back_panel_h - board_w]) cube([slat_w, board_t, board_w]);
     // Horizontal slats evenly distributed between rails
     for (i = [0 : back_slat_n - 1]) {
-        translate([0, 0, board_w + back_slat_gap * (i + 1) + board_w * i])
-            cube([inner_w, board_t, board_w]);
+        translate([board_w, 0, board_w + back_slat_gap * (i + 1) + board_w * i])
+            cube([slat_w, board_t, board_w]);
     }
 }
 
