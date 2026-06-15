@@ -86,15 +86,14 @@ wood()
 
 // ── Cut list ─────────────────────────────────────────────────────────────────
 // 4×4 lumber (actual 3.5"×3.5"):
-//   Side frame legs:   4 @ 23.5"  (2 per side × 2 sides)
+//   Side frame legs:      4 @ 23.5"
 //
 // 2×4 lumber (actual 1.5"×3.5"):
-//   Arms (U-frame top): 2 @ 33"
-//   Front cross rail:   1 @ 53"
-//   Rear cross rail:    1 @ 53"
-//   Center support:     1 @ 26"
-//   Seat slats:         5 @ 53"
-//
-// Back panel (2×4 @ 8° lean):
-//   Back rails (top+bot): 2 @ 53"
-//   Back slats:           3 @ 53"
+//   Arms (U-frame top):   2 @ 33"
+//   Front cross rail:     1 @ 53"
+//   Rear cross rail:      1 @ 53"
+//   Center support:       1 @ 26"
+//   Seat slats:           5 @ 53"
+//   Back stiles (L+R):    2 @ 18"
+//   Back rails (top+bot): 2 @ 46"
+//   Back slats:           2 @ 46"
