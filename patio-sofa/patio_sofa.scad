@@ -16,11 +16,6 @@ arm_h      = 25;   // floor to arm top surface
 seat_slat_n = 5;   // seat slats run left-right, distributed along depth
 back_slat_n = 3;   // back slats run left-right, stacked vertically
 
-// ── Cushion dimensions ───────────────────────────────────────────────────────
-cush_seat_t = 4;   // seat cushion thickness
-cush_back_t = 4;   // back cushion depth (front-back)
-cush_back_h = 14;  // back cushion height
-
 // ── Derived ──────────────────────────────────────────────────────────────────
 inner_w = sofa_width - 2 * post_w;   // 53"
 inner_d = sofa_depth - 2 * post_w;   // 26"
@@ -40,11 +35,9 @@ seat_slat_gap = (inner_d - seat_slat_n * board_w) / (seat_slat_n + 1);   // ~1.4
 
 back_y = sofa_depth - post_w;   // 29.5" — front face of rear legs
 
-wood_col    = [0.76, 0.60, 0.42];
-cushion_col = [0.30, 0.50, 0.70];
+wood_col = [0.76, 0.60, 0.42];
 
-module wood()    { color(wood_col)    children(); }
-module cushion() { color(cushion_col) children(); }
+module wood() { color(wood_col) children(); }
 
 // ── Legs ─────────────────────────────────────────────────────────────────────
 wood() {
@@ -93,16 +86,6 @@ wood() {
                    seat_h + back_slat_gap * (i + 1) + board_w * i])
             cube([inner_w, board_t, board_w]);
     }
-}
-
-// ── Cushions ─────────────────────────────────────────────────────────────────
-cushion() {
-    // Seat
-    translate([post_w, post_w, seat_h])
-        cube([inner_w, inner_d, cush_seat_t]);
-    // Back
-    translate([post_w, back_y - cush_back_t, seat_h])
-        cube([inner_w, cush_back_t, cush_back_h]);
 }
 
 // ── Cut list ─────────────────────────────────────────────────────────────────
