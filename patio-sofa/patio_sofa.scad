@@ -13,8 +13,9 @@ back_h     = 36;   // floor to back top (vertical)
 arm_h      = 25;   // floor to arm top surface
 back_angle =  8;   // degrees back panel leans from vertical
 
-// ── Seat slat count ──────────────────────────────────────────────────────────
+// ── Slat counts ──────────────────────────────────────────────────────────────
 seat_slat_n = 5;
+back_slat_n = 3;
 
 // ── Derived ──────────────────────────────────────────────────────────────────
 inner_w = sofa_width - 2 * post_w;   // 53"
@@ -24,6 +25,9 @@ leg_h         = arm_h - board_t;                                          // 23.
 seat_rail_bot = seat_h - board_t - board_w;                               // 13"
 back_panel_h  = back_h - seat_h;                                          // 18"
 seat_slat_gap = (inner_d - seat_slat_n * board_w) / (seat_slat_n + 1);   // ~1.42"
+
+// Back slats fill the panel height with equal gaps above, below, and between
+back_slat_gap = (back_panel_h - back_slat_n * board_w) / (back_slat_n + 1);
 
 back_y = sofa_depth - post_w;   // 29.5" — front face of rear legs
 
@@ -59,11 +63,22 @@ wood() for (i = [0 : seat_slat_n - 1]) {
         cube([inner_w, board_w, board_t]);
 }
 
-// ── Back panel (solid rectangle, pivoting at seat height, angled backward) ────
+// ── Back panel (slatted rectangle, pivoting at seat height, angled backward) ──
+module back_panel() {
+    // Outer frame: top and bottom rails
+    cube([inner_w, board_t, board_w]);                              // bottom rail
+    translate([0, 0, back_panel_h - board_w]) cube([inner_w, board_t, board_w]);  // top rail
+    // Horizontal slats evenly distributed between rails
+    for (i = [0 : back_slat_n - 1]) {
+        translate([0, 0, board_w + back_slat_gap * (i + 1) + board_w * i])
+            cube([inner_w, board_t, board_w]);
+    }
+}
+
 wood()
     translate([post_w, back_y, seat_h])
     rotate([-back_angle, 0, 0])
-    cube([inner_w, board_t, back_panel_h]);
+    back_panel();
 
 // ── Cut list ─────────────────────────────────────────────────────────────────
 // 4×4 lumber (actual 3.5"×3.5"):
@@ -76,5 +91,6 @@ wood()
 //   Center support:     1 @ 26"
 //   Seat slats:         5 @ 53"
 //
-// Back panel:
-//   3/4" plywood:       1 @ 53" × 18"  (or equiv. 2×4 boards edge-to-edge)
+// Back panel (2×4 @ 8° lean):
+//   Back rails (top+bot): 2 @ 53"
+//   Back slats:           3 @ 53"
