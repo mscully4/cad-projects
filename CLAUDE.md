@@ -1,4 +1,4 @@
-# Claude Guidance — Patio Storage Shelf
+# Claude Guidance — CAD Projects
 
 ## Rendering
 
@@ -6,7 +6,7 @@ Always render with `--autocenter --viewall` so the full model fits in frame:
 
 ```bash
 openscad --render --autocenter --viewall -o <output>.png --imgsize=1200,900 \
-  --camera=0,0,0,<rx>,0,<rz>,1 patio_shelf.scad
+  --camera=0,0,0,<rx>,0,<rz>,1 <model>.scad
 ```
 
 Common camera angles:
@@ -30,7 +30,7 @@ Installed at `~/.local/share/OpenSCAD/libraries/BOSL2/`. Include via:
 include <BOSL2/std.scad>
 ```
 
-Edge rounding (`rounding=`) must be less than half the smallest dimension of the object. Back panel is 0.25" thick — don't apply rounding to it.
+Edge rounding (`rounding=`) must be less than half the smallest dimension of the object.
 
 ## Conventions
 
@@ -38,3 +38,10 @@ Edge rounding (`rounding=`) must be less than half the smallest dimension of the
 - Parameters at top of file; derived values below
 - Keep cut list comment at bottom of SCAD file in sync with any geometry changes
 - PNGs are committed to git — regenerate and re-commit after any geometry changes
+
+## Projects
+
+| Directory | Description |
+|-----------|-------------|
+| `patio-shelf/` | Patio storage shelf |
+| `patio-sofa/` | Patio loveseat (60" wide, all 2×4) |
