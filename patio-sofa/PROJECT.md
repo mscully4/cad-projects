@@ -1,13 +1,13 @@
 # Patio Sofa (Loveseat)
 
-Wooden loveseat for a covered patio. Two ∩-shaped side frames (4×4 legs + 2×4 arm), slatted seat, and a framed rectangular back panel angled 8° for comfort.
+Wooden loveseat for a covered patio. Two ∩-shaped side frames (2×4 legs + 2×4 arm), slatted seat, and a framed rectangular back panel angled 8° for comfort.
 
 ## Dimensions
 
 | Property | Value |
 |----------|-------|
 | Width | 60" |
-| Depth | 33" (seat area; back extends ~3" beyond) |
+| Depth | 33" |
 | Seat height | 18" |
 | Arm height | 25" |
 | Back height | 36" (vertical) |
@@ -15,7 +15,7 @@ Wooden loveseat for a covered patio. Two ∩-shaped side frames (4×4 legs + 2×
 
 ## Design
 
-- **Side frames**: ∩-shaped — two 4×4 legs connected across the top by a 2×4 arm
+- **Side frames**: ∩-shaped — two 2×4 legs (3.5" face outward, 1.5" deep) connected across the top by a 2×4 arm
 - **Seat**: 5 horizontal 2×4 slats spanning the full 53" inner width, supported by front/rear cross rails and a center support
 - **Back**: framed rectangle (2×4 stiles, rails, slats) pivoting at seat height and leaning 8° backward
 
@@ -23,19 +23,17 @@ Wooden loveseat for a covered patio. Two ∩-shaped side frames (4×4 legs + 2×
 
 | Part | Material | Qty | Length |
 |------|----------|-----|--------|
-| Side frame legs | 4×4 | 4 | 23.5" |
+| Side frame legs | 2×4 | 4 | 23.5" |
 | Arms (U-frame top) | 2×4 | 2 | 33" |
 | Front cross rail | 2×4 | 1 | 53" |
 | Rear cross rail | 2×4 | 1 | 53" |
-| Center support | 2×4 | 1 | 26" |
+| Center support | 2×4 | 1 | 30" |
 | Seat slats | 2×4 | 5 | 53" |
 | Back stiles (L+R) | 2×4 | 2 | 18" |
 | Back rails (top+bot) | 2×4 | 2 | 46" |
 | Back slats | 2×4 | 2 | 46" |
 
-**4×4 total:** 4 @ 23.5"
-
-**2×4 total:** 2 @ 33" + 3 @ 53" + 5 @ 53" + 2 @ 18" + 4 @ 46" + 1 @ 26"
+**2×4 total:** 4 @ 23.5" + 2 @ 33" + 2 @ 53" + 5 @ 53" + 2 @ 18" + 4 @ 46" + 1 @ 30"
 
 ## Notes
 
