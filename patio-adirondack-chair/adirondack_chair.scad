@@ -74,7 +74,10 @@ wood()
 //    translate([x, board_w, seat_h - board_w])
 //    cube([board_t, rail_rear_y - board_w, board_w]);
 
-// ── Seat slat 1 (on top of front cross rail) ──────────────────────────────────
+// ── Seat (single block, parallel to back legs) ───────────────────────────────
+seat_depth = 20;
+seat_tilt  = atan(back_leg_h / front_leg_d);
 wood()
     translate([board_t, 0, seat_h])
-    cube([chair_w - 2*board_t, slat_w, slat_t]);
+    rotate([-seat_tilt, 0, 0])
+    cube([chair_w - 2*board_t, seat_depth, slat_t]);
