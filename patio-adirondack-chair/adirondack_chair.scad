@@ -73,3 +73,8 @@ wood()
 //for (x = [board_t, chair_w - 2*board_t])
 //    translate([x, board_w, seat_h - board_w])
 //    cube([board_t, rail_rear_y - board_w, board_w]);
+
+// ── Seat slat 1 (on top of front cross rail) ──────────────────────────────────
+wood()
+    translate([board_t, 0, seat_h])
+    cube([chair_w - 2*board_t, slat_w, slat_t]);
