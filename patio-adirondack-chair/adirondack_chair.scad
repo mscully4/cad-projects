@@ -81,3 +81,15 @@ wood()
     translate([board_t, 0, seat_h])
     rotate([-seat_tilt, 0, 0])
     cube([chair_w - 2*board_t, seat_depth, slat_t]);
+
+// ── Back panel (seat rear → arm back stretcher, V with seat) ─────────────────
+back_pivot_y   = seat_depth * cos(seat_tilt);
+back_pivot_z   = seat_h - seat_depth * sin(seat_tilt);
+back_dy        = arm_rear_y - board_w - back_pivot_y;
+back_dz        = arm_h - 2*board_t - back_pivot_z;
+back_panel_a   = atan(back_dy / back_dz);
+back_panel_len = (back_top_h - back_pivot_z) / cos(back_panel_a);
+wood()
+    translate([board_t, back_pivot_y, back_pivot_z])
+    rotate([-back_panel_a, 0, 0])
+    cube([chair_w - 2*board_t, slat_t, back_panel_len]);
